@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "example-firebase-video-messanger",
-    "slug": "example-firebase-video-messanger",
+    "name": "iXample",
+    "slug": "iXample",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -16,30 +16,37 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "googleServicesFile": "./GoogleService-Info.plist"
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "bundleIdentifier": "com.dzajac.examplefirebasevideomessanger"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "googleServicesFile": "./google-services.json"
+      "googleServicesFile": "./google-services.json",
+      "package": "com.dzajac.examplefirebasevideomessanger"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
       "@react-native-firebase/app",
-      "@react-native-firebase/firestore",
-      "@react-native-firebase/storage",
-      "@react-native-firebase/auth",
-      "@react-native-firebase/remote-config",
-      "expo-build-properties",
-      {
-        "ios": {
-          "useFrameworks": "static"
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static"
+          }
         }
-      }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends.",
+          "cameraPermission": "Allow $(PRODUCT_NAME) to open the camera"
+        }
+      ]
     ]
   }
 }
